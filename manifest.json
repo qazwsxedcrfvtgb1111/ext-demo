@@ -1,0 +1,39 @@
+{
+  "name": "Demo ext",
+  "manifest_version": 3,
+  "icons": {
+  },
+  "devtools_page": "devtools.html",
+  "background": {
+    "service_worker": "background-worker.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' http://localhost:8097"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js",
+        "node_modules/webextension-polyfill/dist/browser-polyfill.min.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "match_about_blank": true
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "debugger",
+    "storage",
+    "unlimitedStorage"
+  ],
+  "description": "ext demo",
+  "offline_enabled": true,
+  "minimum_chrome_version": "88",
+  "incognito": "split",
+  "version_name": "1",
+  "version": "1"
+}
