@@ -5,7 +5,7 @@
   },
   "devtools_page": "devtools.html",
   "background": {
-    "service_worker": "background-worker.js"
+    "service_worker": "dist/background-worker.bundle.js"
   },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' http://localhost:8097"
@@ -16,8 +16,8 @@
         "<all_urls>"
       ],
       "js": [
-        "content.js",
-        "node_modules/webextension-polyfill/dist/browser-polyfill.min.js"
+        "dist/browser-polyfill.bundle.js",
+        "dist/content.bundle.js"
       ],
       "all_frames": true,
       "run_at": "document_start",

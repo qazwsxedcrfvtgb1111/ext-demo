@@ -19,4 +19,4 @@ const getContext = () => {
     return null
 }
 
-console.log('content', getContext())
+console.log('background', getContext())
