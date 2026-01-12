@@ -1,27 +1,7 @@
-
-
-const hasApi = (api) => {
-    return typeof globalThis.browser !== 'undefined' && api in globalThis.browser
-}
-
-const getContext = () => {
-    if (hasApi('devtools')) {
-        return 'devtools'
-    }
-
-    if (hasApi('tabs')) {
-        return 'background'
-    }
-
-    if (hasApi('extension')) {
-        return 'content'
-    }
-
-    return null
-}
-
-console.log('devtools', getContext())
-
+console.log('devtools: typeof devtools', typeof browser.devtools)
+console.log('devtools: devtools in browser', 'devtools' in browser)
+console.log('devtools: tabs', typeof browser.tabs)
+console.log('devtools: extension', typeof browser.extension)
 
 
 browser.devtools.panels
